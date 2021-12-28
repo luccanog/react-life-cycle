@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import MouseContainer from './components/MouseContainer'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [display, setDisplay] = useState(true)
+	return (
+		<div>
+			<button onClick={() => setDisplay(!display)}>TOGGLE</button>
+			{display && <MouseContainer />}
+		</div>
+	)
 }
 
-export default App;
+export default App
+
